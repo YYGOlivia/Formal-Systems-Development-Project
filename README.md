@@ -119,11 +119,6 @@ Engineering Student (Bac +5) – ENSEEIHT
 
 ---
 
-### Message lost
-![Proof](perte.png)
-
----
-
 ### Complete Send
 ![Proof](images\env_complexe.png)
 
