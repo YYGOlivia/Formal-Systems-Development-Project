@@ -83,7 +83,7 @@ Through this project, the following skills were developed:
 
 ## 🎬 Demo
 
-This project is based on formal modeling using the Rodin Platform.
+This project is based on formal modeling using the **Rodin** Platform.
 
 To explore the project:
 
