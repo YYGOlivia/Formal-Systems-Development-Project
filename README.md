@@ -1,9 +1,8 @@
 # 📘 Formal Systems Development Project (DSR)
 
-![Status](https://img.shields.io/badge/status-academic%20project-blue)
+![Status](https://img.shields.io/badge/status-ENSEEIHT%20Academic%20Project-blue)
 ![Language](https://img.shields.io/badge/language-Event--B-orange)
 ![Tool](https://img.shields.io/badge/tool-Rodin%20-green)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ## 📌 Project Overview
 
@@ -44,11 +43,6 @@ The development process follows a structured approach:
 
 ---
 
-## 🛠️ Technologies & Tools
-- Event-B formal method
-- Rodin Platform (Event-B modeling and proof environment)
-- Mathematical proof obligations and verification tools
----
 
 ## 📂 Project Structure
 
@@ -87,7 +81,7 @@ This project is based on formal modeling using the **Rodin** Platform.
 
 To explore the project:
 
-1. Open the project using *Rodin* Platform
+1. Open the project using *Rodin* 
 2. Load the `.bpr` / `.bps` files
 3. Explore contexts and machines
 4. Run proof obligations to verify system correctness
@@ -115,7 +109,7 @@ Engineering Student (Bac +5) – ENSEEIHT
 
 ---
 ### Message lost
-![Proof](perte.png)
+![Proof](images\perte.png)
 
 ---
 
