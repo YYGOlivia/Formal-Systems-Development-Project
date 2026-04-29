@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.seesContext name="*" org.eventb.core.target="exemple_1"/>
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="Reseau"/>
+    <org.eventb.core.variable name="." org.eventb.core.identifier="Messages"/>
+    <org.eventb.core.variable name="0" org.eventb.core.comment="// Messages stockés dans un site" org.eventb.core.identifier="SurSite"/>
+    <org.eventb.core.variable name="1" org.eventb.core.comment="// Messages en transition entre 2 sites" org.eventb.core.identifier="SurReseau"/>
+    <org.eventb.core.variable name="5" org.eventb.core.identifier="Source"/>
+    <org.eventb.core.variable name="6" org.eventb.core.identifier="Destination"/>
+    <org.eventb.core.variable name=":" org.eventb.core.identifier="Perdus"/>
+    <org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="Cache ≔ SITES × {∅}" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="Route ≔ ∅" org.eventb.core.label="act9"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="Hop ≔ ∅" org.eventb.core.label="act10"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CreerConnexion">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="CreerConnexion"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PerdreConnexion">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="PerdreConnexion"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ProduireMessage">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ProduireMessage"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="mss"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="src"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="dst"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="mss ∈ MESSAGES"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="mss ∉ Messages "/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="src ∈ SITES"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="dst ∈ SITES"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="src ≠ dst"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="Messages ≔ Messages ∪ {mss}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="Source(mss) ≔ src" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="Destination(mss) ≔ dst" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="SurSite(mss) ≔ src" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="Route ≔ Route ∪ {mss ↦ Cache(src)(dst)}" org.eventb.core.label="act5"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Envoyer">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Envoyer"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Recevoir">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Recevoir"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="PerdreMessage">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="PerdreMessage"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RecevoirTimeout">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="RecevoirTimeout"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="D" org.eventb.core.comment="//Table de routage locale (mise en cache)" org.eventb.core.identifier="Cache"/>
+    <org.eventb.core.invariant name="E" org.eventb.core.label="inv1" org.eventb.core.predicate="Cache ∈ SITES → (SITES ⇸ (ℕ1 ⇸ SITES))"/>
+    <org.eventb.core.variable name="F" org.eventb.core.comment="// Route portée par le message (dans l'en-tête)" org.eventb.core.identifier="Route"/>
+    <org.eventb.core.invariant name="G" org.eventb.core.label="inv2" org.eventb.core.predicate="Route ∈ Messages ⇸ (ℕ1 ⇸ SITES)"/>
+    <org.eventb.core.variable name="H" org.eventb.core.comment=" // Indice du site courant sur la route" org.eventb.core.identifier="Hop"/>
+    <org.eventb.core.invariant name="I" org.eventb.core.label="inv3" org.eventb.core.predicate="Hop ∈ dom(Route) → ℕ1"/>
+    <org.eventb.core.invariant name="J" org.eventb.core.label="inv4" org.eventb.core.predicate="∀m· m∈dom(Route) ⇒ finite(dom(Route(m))) ∧ dom(Route(m)) = 1‥card(dom(Route(m)))"/>
+    <org.eventb.core.invariant name="K" org.eventb.core.label="inv5" org.eventb.core.predicate="∀m,s· m↦s ∈ SurSite ∧ m∈dom(Route) ⇒ s = Route(m)(Hop(m))"/>
+    <org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ChoisirRoute">
+        <org.eventb.core.guard name=":" org.eventb.core.label="grd12" org.eventb.core.predicate="r = Cache(src)(dst)"/>
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="mss ∈ Messages"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="Route(mss) ≔ r" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="Hop(mss) ≔ 1" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="," org.eventb.core.identifier="mss"/>
+        <org.eventb.core.parameter name="-" org.eventb.core.identifier="src"/>
+        <org.eventb.core.parameter name="." org.eventb.core.identifier="dst"/>
+        <org.eventb.core.parameter name="/" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd2" org.eventb.core.predicate="mss ↦ src ∈ SurSite"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd3" org.eventb.core.predicate="src = Source(mss)"/>
+        <org.eventb.core.guard name="2" org.eventb.core.label="grd4" org.eventb.core.predicate="dst = Destination(mss)"/>
+        <org.eventb.core.guard name="3" org.eventb.core.label="grd5" org.eventb.core.predicate="dst ∈ dom(Cache(src))"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd6" org.eventb.core.predicate="finite(dom(r))"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd7" org.eventb.core.predicate="dom(r) = 1‥card(dom(r))"/>
+        <org.eventb.core.guard name="6" org.eventb.core.label="grd8" org.eventb.core.predicate="card(dom(r)) ≥ 2" org.eventb.core.theorem="true"/>
+        <org.eventb.core.guard name="7" org.eventb.core.label="grd9" org.eventb.core.predicate="r(1) = src"/>
+        <org.eventb.core.guard name="8" org.eventb.core.label="grd10" org.eventb.core.predicate="r(card(dom(r))) = dst"/>
+        <org.eventb.core.guard name="9" org.eventb.core.label="grd11" org.eventb.core.predicate="mss ∉ dom(Route)" org.eventb.core.theorem="true"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="InitCache">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="src"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="src ∈ SITES"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="Cache(src) ≔ Cache(src) ∪ {dst ↦ {(1 ↦ dst)}}" org.eventb.core.label="act1"/>
+        <org.eventb.core.parameter name="+" org.eventb.core.identifier="dst"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="dst ∈ SITES ∖ {src}"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="dst ∉ dom(Cache(src))"/>
+    </org.eventb.core.event>
+    <org.eventb.core.refinesMachine name="evt4" org.eventb.core.target="DSR_2"/>
+    <org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="RecevoirTransition">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="mss ∈ Messages"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="mss"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="src"/>
+        <org.eventb.core.parameter name="*" org.eventb.core.identifier="dst"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="src ∈ SITES"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="dst ∈ SITES"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="src↦dst ∈ Reseau"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="SurReseau(mss) = src↦dst"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EnvoyerTransition">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="src"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="dst"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="mss"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="mss ∈ Messages"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="src ∈ SITES"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="dst ∈ SITES"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="Source(mss) ≠ src"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="mss ↦ src ∈ SurSite"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="src ↦ dst ∈ Reseau"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="SurSite ≔ SurSite ∖ {mss↦src}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="SurReseau ≔ SurReseau ∪ {mss↦(src↦dst)}" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="2" org.eventb.core.identifier="r"/>
+        <org.eventb.core.guard name="3" org.eventb.core.label="grd7" org.eventb.core.predicate="r = Route(mss)"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd8" org.eventb.core.predicate="r(mss)(Hop(mss)) = dst"/>
+        <org.eventb.core.action name="5" org.eventb.core.assignment="Hop ≔ Hop ∪ {mss ↦ Hop(mss) + 1}" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

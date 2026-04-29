@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="SITES" org.eventb.core.type="ℙ(SITES)"/>
+        <org.eventb.core.poPredicate name="SITET" org.eventb.core.predicate="finite(SITES)" org.eventb.core.source="/DSR_Project/ctx_0.buc|org.eventb.core.contextFile#ctx_0|org.eventb.core.axiom#("/>
+        <org.eventb.core.poIdentifier name="MESSAGES" org.eventb.core.type="ℙ(MESSAGES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DSR_Project/ctx_1.bpo|org.eventb.core.poFile#ctx_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(MESSAGES)" org.eventb.core.source="/DSR_Project/ctx_1.buc|org.eventb.core.contextFile#ctx_1|org.eventb.core.axiom#)"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

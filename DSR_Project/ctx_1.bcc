@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/DSR_Project/ctx_0.bcc|org.eventb.core.scContextFile#ctx_0" org.eventb.core.source="/DSR_Project/ctx_1.buc|org.eventb.core.contextFile#ctx_1|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="ctx_0">
+        <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(SITES)" org.eventb.core.source="/DSR_Project/ctx_0.buc|org.eventb.core.contextFile#ctx_0|org.eventb.core.axiom#(" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scCarrierSet name="SITES" org.eventb.core.source="/DSR_Project/ctx_0.buc|org.eventb.core.contextFile#ctx_0|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(SITES)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scAxiom name="ctx_1" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(MESSAGES)" org.eventb.core.source="/DSR_Project/ctx_1.buc|org.eventb.core.contextFile#ctx_1|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scCarrierSet name="MESSAGES" org.eventb.core.source="/DSR_Project/ctx_1.buc|org.eventb.core.contextFile#ctx_1|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(MESSAGES)"/>
+</org.eventb.core.scContextFile>

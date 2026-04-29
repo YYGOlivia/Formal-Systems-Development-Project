@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="SITES" org.eventb.core.type="ℙ(SITES)"/>
+        <org.eventb.core.poPredicate name="SITET" org.eventb.core.predicate="finite(SITES)" org.eventb.core.source="/DSR_Project/ctx_0.buc|org.eventb.core.contextFile#ctx_0|org.eventb.core.axiom#("/>
+        <org.eventb.core.poIdentifier name="A" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="B" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="C" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poPredicate name="SITEU" org.eventb.core.predicate="partition(SITES,{A},{B},{C})" org.eventb.core.source="/DSR_Project/exemple_0.buc|org.eventb.core.contextFile#exemple_0|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poIdentifier name="MESSAGES" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poPredicate name="MESSAGET" org.eventb.core.predicate="finite(MESSAGES)" org.eventb.core.source="/DSR_Project/ctx_1.buc|org.eventb.core.contextFile#ctx_1|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="MESSAGEU" org.eventb.core.predicate="card(MESSAGES)=2" org.eventb.core.source="/DSR_Project/exemple_1.buc|org.eventb.core.contextFile#exemple_1|org.eventb.core.axiom#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="Perdus" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="Messages" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="SurSite" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurReseau" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="Destination" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="Reseau" org.eventb.core.type="ℙ(SITES×SITES)"/>
+        <org.eventb.core.poIdentifier name="Source" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poPredicate name="Destinatioo" org.eventb.core.predicate="Reseau⊆SITES × SITES" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="Destinatiop" org.eventb.core.predicate="Reseau=Reseau∼" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poPredicate name="Destinatioq" org.eventb.core.predicate="Messages⊆MESSAGES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#\/"/>
+        <org.eventb.core.poPredicate name="Destinatior" org.eventb.core.predicate="SurSite∈Messages ⇸ SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poPredicate name="Destinatios" org.eventb.core.predicate="SurReseau∈Messages ⇸ SITES × SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poPredicate name="Destinatiot" org.eventb.core.predicate="Source∈Messages → SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#7"/>
+        <org.eventb.core.poPredicate name="Destinatiou" org.eventb.core.predicate="Destination∈Messages → SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#8"/>
+        <org.eventb.core.poPredicate name="Destinatiov" org.eventb.core.predicate="dom(SurSite)∩dom(SurReseau)=(∅ ⦂ ℙ(MESSAGES))" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#9"/>
+        <org.eventb.core.poPredicate name="Destinatiow" org.eventb.core.predicate="Perdus⊆Messages" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#;"/>
+        <org.eventb.core.poPredicate name="Destinatiox" org.eventb.core.predicate="partition(Messages,dom(SurSite),dom(SurReseau),Perdus)" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.invariant#B"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatioo" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="Source'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurReseau'" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="Messages'" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="Perdus'" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="Destination'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="Reseau'" org.eventb.core.type="ℙ(SITES×SITES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatioo" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatioo" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiop" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="s2" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="Reseau'" org.eventb.core.type="ℙ(SITES×SITES)"/>
+        <org.eventb.core.poIdentifier name="s1" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiop" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiop" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s1∈SITES" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#+|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="s2∈SITES" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#+|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s1 ↦ s2∉Reseau" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#+|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="s2 ↦ s1∉Reseau" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#+|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="s1≠s2" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#+|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatioq" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="s2" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="Reseau'" org.eventb.core.type="ℙ(SITES×SITES)"/>
+        <org.eventb.core.poIdentifier name="s1" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatioq" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatioq" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="s1∈SITES" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#-|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="s2∈SITES" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#-|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="s1 ↦ s2∈Reseau" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#-|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="s2 ↦ s1∈Reseau" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#-|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="s1≠s2" org.eventb.core.source="/DSR_Project/DSR_0.bum|org.eventb.core.machineFile#DSR_0|org.eventb.core.event#-|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatior" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="Source'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="dst" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="Messages'" org.eventb.core.type="ℙ(MESSAGES)"/>
+        <org.eventb.core.poIdentifier name="Destination'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="src" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatior" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatior" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈MESSAGES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mss∉Messages" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#4|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="src∈SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#4|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="dst∈SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#4|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="src≠dst" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#4|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Envoyer/grd7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatios,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mss∈dom(Source)∧Source∈MESSAGES ⇸ SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#4"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatios,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Envoyer/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTALLHYPDestinatios"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dst=Destination(mss)" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#=|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#="/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#=|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poSequent#Envoyer\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatios" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="dst" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurReseau'" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="src" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPDestinatios," org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatios" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Messages" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="src∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#3"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dst∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="src ↦ dst∈Reseau" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="mss ↦ src∈SurSite" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatios" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatios," org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Source(mss)=src" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#@|org.eventb.core.guard#4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="EnvoyerTransition/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiot)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mss∈dom(Source)∧Source∈MESSAGES ⇸ SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiot)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="EnvoyerTransition/SurSite/EQL" org.eventb.core.accurate="true" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTALLHYPDestinatiot"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="SurSite ∖ {mss ↦ src}=SurSite" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.action#0"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poSequent#EnvoyerTransition\/SurSite\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="EnvoyerTransition/SurReseau/EQL" org.eventb.core.accurate="true" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTALLHYPDestinatiot"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="SurReseau∪{mss ↦ (src ↦ dst)}=SurReseau" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.action#1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poSequent#EnvoyerTransition\/SurReseau\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiot" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="dst" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurReseau'" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="src" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPDestinatiot)" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiot" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Messages" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="src∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dst∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiot" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiot)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Source(mss)≠src" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="mss ↦ src∈SurSite" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="src ↦ dst∈Reseau" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#E|org.eventb.core.guard#\/"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiou" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="dst" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="SurReseau'" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="src" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiou" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiou" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Messages" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="src∈SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dst∈SITES" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="src ↦ dst∈Reseau" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="mss ↦ (src ↦ dst)∈SurReseau" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Destination(mss)=dst" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#@|org.eventb.core.guard#1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="RecevoirTransition/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiov*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="mss∈dom(SurReseau)∧SurReseau∈MESSAGES ⇸ SITES × SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiov*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiov" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="dst" org.eventb.core.type="SITES"/>
+        <org.eventb.core.poIdentifier name="src" org.eventb.core.type="SITES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPDestinatiov*" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiov" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Messages" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="src∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="dst∈SITES" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="src ↦ dst∈Reseau" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiov" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTHYPDestinatiov*" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="SurReseau(mss)=src ↦ dst" org.eventb.core.source="/DSR_Project/DSR_2.bum|org.eventb.core.machineFile#DSR_2|org.eventb.core.event#D|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiow" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="SurReseau'" org.eventb.core.type="ℙ(MESSAGES×(SITES×SITES))"/>
+        <org.eventb.core.poIdentifier name="Perdus'" org.eventb.core.type="ℙ(MESSAGES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiow" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiow" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Messages" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#A|org.eventb.core.guard#("/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="mss∈dom(SurReseau)" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#A|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="SurReseau(mss)∉Reseau" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#A|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="mss∉Perdus" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#A|org.eventb.core.guard#+"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTDestinatiox" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="mss" org.eventb.core.type="MESSAGES"/>
+        <org.eventb.core.poIdentifier name="SurSite'" org.eventb.core.type="ℙ(MESSAGES×SITES)"/>
+        <org.eventb.core.poIdentifier name="Perdus'" org.eventb.core.type="ℙ(MESSAGES)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPDestinatiox" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#EVTIDENTDestinatiox" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="mss∈Perdus" org.eventb.core.source="/DSR_Project/DSR_1.bum|org.eventb.core.machineFile#DSR_1|org.eventb.core.event#C|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DSR_Project/DSR_2.bpo|org.eventb.core.poFile#DSR_2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>
