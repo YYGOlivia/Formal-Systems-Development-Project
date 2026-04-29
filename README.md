@@ -86,8 +86,8 @@ This project is academic and focuses on **methodology and correctness** rather t
 
 ## 👩‍💻 Author
 
-Yige YANG
-Ninon Autefage-Pinies
+Yige YANG  &  Ninon Autefage-Pinies
+
 Engineering Student (Bac +5) – ENSEEIHT
 
 ---
