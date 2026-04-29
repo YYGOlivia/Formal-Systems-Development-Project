@@ -113,23 +113,38 @@ Engineering Student (Bac +5) – ENSEEIHT
 ### Simple Send
 ![Proof](images\env_simple.png)
 
+---
 ### Message lost
 ![Proof](perte.png)
 
+---
+
 ### Message lost
 ![Proof](perte.png)
+
+---
 
 ### Complete Send
 ![Proof](images\env_complexe.png)
 
+---
+
 ### Example of a routing table (Cache)
 ![Model](images\cache.png)
+
+---
 
 ### Example of a RREQ broadcast
 ![Model](images\RREQ.png)
 
+---
+
 ### example of a RREP response
 ![Model](images\RREP.png)
 
+---
+
 ### Scenario of loss of a RREQ with a "bridge" site
 ![Model](images\PerdreRREQ.png)
+
+---
